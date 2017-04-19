@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- Linking a custom font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700,700i" rel="stylesheet">
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
 
-  <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
-    </nav>
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/moment.js"></script>
+  <script type="text/javascript" src="/scripts/submit-prevent-default.js"></script>
 
-  </body>
+
+</head>
+
+<body>
+
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <img class="logo" src="/images/bird.png" width="80px" height="80px">
+    <span class="header">Tweeter</span>
+  </nav>
+
+  <!-- Page-<specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2 class="compose-header">Compose Tweet</h2>
+      <form action="/tweets/" method="POST" class="submit-tweet">
+        <textarea class="tweet-input" name="text" placeholder="What are you humming about?"></textarea>
+        <br>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
+<!--     <br>
+    <section class="demo-tweet">
+      <article class="demo-tweet">
+        <header class="tweet-header">
+          <img src="https://diggwithme.files.wordpress.com/2012/09/new-default-twitter-avatar.jpg" class="avatar">
+          <h2 class="demo-header">Kevin</h2>
+          <p class="handle">@KevinMo</p>
+        </header>
+        <p class="tweet-text">Hey, I posted a tweet.</p>
+        <footer class="footer">
+          <p class="footer">2 minutes ago.</p>
+          <i class="fa fa-heart icon" aria-hidden="true"></i>
+          <i class="fa fa-retweet icon" aria-hidden="true"></i>
+          <i class="fa fa-flag icon" aria-hidden="true"></i>
+        </footer>
+      </article>
+    </section> -->
+    <section id="tweets-container" class="demo-tweet">
+    </section>
+  </main>
+</body>
 </html>
