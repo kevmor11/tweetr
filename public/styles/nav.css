@@ -10,14 +10,22 @@ button.compose-button {
   display: block;
   float: right;
   height: 50px;
+  margin-right: -15px;
   margin-top: 14.5px;
   vertical-align: center;
   width: 100px;
 }
 
 button:hover.compose-button {
-  background-color: #f4f2f2;
+  background-color: #F7F6F6;
   color: #017563;
+}
+
+i.fa.fa-pencil-square-o {
+  display: block;
+  float: left;
+  margin-left: 2px;
+  margin-top: 14.5px;
 }
 
 img {
@@ -29,6 +37,11 @@ img {
   float: left;
   padding: 10px;
   position: relative;
+}
+
+#nav-bar .header {
+  margin-left: 536px;
+  padding: 10px;
 }
 
 #nav-bar {
@@ -49,5 +62,9 @@ img {
   line-height: 80px;
   padding-left: 10px;
   text-align: center;
-  vertical-align: top;
+  vertical-align: top;.fa-pencil-square-o
+}
+
+p.compose {
+  margin-top: 12px;
 }
