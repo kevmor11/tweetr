@@ -3,7 +3,7 @@ $(function () {
   function createTweetHeader(tweet) {
     let $avatar = $("<img>", { src: tweet.user.avatars.regular }).addClass("avatar");
     let $username = $("<h2>", { text: tweet.user.name }).addClass("demo-header");
-    let $handle = $("<p>", { text: tweet.handle }).addClass("handle");
+    let $handle = $("<p>", { text: tweet.user.handle }).addClass("handle");
 
     let $header = $("<header>").addClass("tweet-header").append([$avatar, $username, $handle]);
     return $header;
