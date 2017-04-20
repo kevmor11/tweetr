@@ -3,6 +3,10 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+.error-message {
+  display: none;
+}
+
 h2.compose-header {
   color: #244751;
 }
@@ -18,7 +22,7 @@ main.container {
   background-color: white;
   height: 100%;
   margin: 0 auto;
-  margin-top: 140px;
+  margin-top: 80px;
   padding: 60px;
   width: 600px;
 }

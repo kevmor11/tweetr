@@ -2,6 +2,24 @@ body {
   margin: 0;
 }
 
+button.compose-button {
+  background-color: white;
+  border: 1.5px solid #018e79;
+  border-radius: 8px;
+  color: #00a087;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-top: 14.5px;
+  vertical-align: center;
+  width: 100px;
+}
+
+button:hover.compose-button {
+  background-color: #f4f2f2;
+  color: #017563;
+}
+
 img {
   height: 80px;
   width: 80px;
@@ -23,6 +41,7 @@ img {
   right: 0;
   top: 0;
   width: auto;
+  z-index: 1;
 }
 
 #nav-bar .header {

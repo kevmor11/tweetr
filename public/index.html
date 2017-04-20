@@ -25,8 +25,7 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/moment.js"></script>
-  <script type="text/javascript" src="/scripts/submit-prevent-default.js"></script>
-
+  <script type="text/javascript" src="/scripts/toggle-compose.js"></script>
 
 </head>
 
@@ -36,36 +35,27 @@
   <nav id="nav-bar">
     <img class="logo" src="/images/bird.png" width="80px" height="80px">
     <span class="header">Tweeter</span>
+    <button class="compose-button" type="toggle">Compose</button>
   </nav>
 
   <!-- Page-<specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
+    <section class="new-tweet toggle-compose">
       <h2 class="compose-header">Compose Tweet</h2>
       <form action="/tweets/" method="POST" class="submit-tweet">
         <textarea class="tweet-input" name="text" placeholder="What are you humming about?"></textarea>
-        <br>
-        <input type="submit" value="Tweet">
-        <span class="counter">140</span>
+        <div class="too-short error-message">
+          <p>Your tweet cannot be empty.</p>
+        </div>
+        <div class="too-long error-message">
+          <p>Your tweet cannot be over 140 characters.</p>
+        </div>
+        <div>
+          <input type="submit" id="new-tweet" value="Tweet">
+          <span class="counter">140</span>
+        </div>
       </form>
     </section>
-<!--     <br>
-    <section class="demo-tweet">
-      <article class="demo-tweet">
-        <header class="tweet-header">
-          <img src="https://diggwithme.files.wordpress.com/2012/09/new-default-twitter-avatar.jpg" class="avatar">
-          <h2 class="demo-header">Kevin</h2>
-          <p class="handle">@KevinMo</p>
-        </header>
-        <p class="tweet-text">Hey, I posted a tweet.</p>
-        <footer class="footer">
-          <p class="footer">2 minutes ago.</p>
-          <i class="fa fa-heart icon" aria-hidden="true"></i>
-          <i class="fa fa-retweet icon" aria-hidden="true"></i>
-          <i class="fa fa-flag icon" aria-hidden="true"></i>
-        </footer>
-      </article>
-    </section> -->
     <section id="tweets-container" class="demo-tweet">
     </section>
   </main>
