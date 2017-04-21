@@ -5,6 +5,7 @@ const userHelper    = require("../lib/util/user-helper")
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+// Defining the express routes as modular middleware
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {

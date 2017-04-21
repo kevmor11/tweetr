@@ -1,6 +1,7 @@
 "use strict";
+// This file is the server
 
-// Basic express setup:
+// Basic express and MongoDB setup:
 
 const PORT          = 8080;
 const express       = require("express");
@@ -9,10 +10,12 @@ const app           = express();
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/test";
 
+// Use the body parser so our sever can translate request/response messages
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// The in-memory database of tweets. It's a basic object with an array in it.
+// Link the Mongo database with the tweet rendering functions,
+// as well as the express server routes
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   const DataHelpers = require("./lib/data-helpers.js")(db);
