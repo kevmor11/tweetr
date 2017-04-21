@@ -43,11 +43,6 @@ img {
   position: relative;
 }
 
-#nav-bar .header {
-  margin-left: 536px;
-  padding: 10px;
-}
-
 #nav-bar {
   background-color: $navbar-color;
   color: white;
@@ -64,8 +59,9 @@ img {
 #nav-bar .header {
   font-size: 200%;
   line-height: $navbar-height;
+  /*margin-left: 17em;*/
+  padding: 10px;
   padding-left: 10px;
-  text-align: center;
   vertical-align: top;
 }
 
