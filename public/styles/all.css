@@ -61,30 +61,26 @@ p.compose {
   dispay: inline;
   margin-top: 12px; }
 
-article {
+article, article:hover, article:hover i.icon, article:hover img.avatar, article:hover p.handle, i.icon, img.avatar, p.handle {
   transition: .5s all ease-in-out; }
 
-article.demo-tweet {
+article.demo-tweet, article:hover i.demo-tweet.icon, article:hover img.demo-tweet.avatar, article:hover p.demo-tweet.handle, i.demo-tweet.icon, img.demo-tweet.avatar, p.demo-tweet.handle {
   border: 1.5px solid #d3d3d3;
   border-radius: 7px;
   margin-bottom: 30px; }
 
-article:hover {
+article:hover, article:hover i.icon:hover, article:hover img.avatar:hover, article:hover p.handle:hover, i.icon:hover, img.avatar:hover, p.handle:hover {
   border: 1.5px solid #6a94a0;
-  color: #244751;
-  transition: .5s all ease-in-out; }
+  color: #244751; }
 
-article:hover i.icon {
-  opacity: 1;
-  transition: .5s all ease-in-out; }
+article:hover i.icon, i.icon:hover i.icon, img.avatar:hover i.icon, p.handle:hover i.icon {
+  opacity: 1; }
 
-article:hover img.avatar {
-  opacity: 1;
-  transition: .5s all ease-in-out; }
+article:hover img.avatar, i.icon:hover img.avatar, img.avatar:hover img.avatar, p.handle:hover img.avatar {
+  opacity: 1; }
 
-article:hover p.handle {
-  color: #84898e;
-  transition: .5s all ease-in-out; }
+article:hover p.handle, i.icon:hover p.handle, img.avatar:hover p.handle, p.handle:hover p.handle {
+  color: #84898e; }
 
 footer.footer {
   border-top: 1px solid #eee;
@@ -113,13 +109,11 @@ i.icon {
   float: right;
   line-height: 10px;
   opacity: 0;
-  padding: 5px;
-  transition: .5s all ease-in-out; }
+  padding: 5px; }
 
 img.avatar {
   border-radius: 6px;
-  opacity: 0.7;
-  transition: .5s all ease-in-out; }
+  opacity: 0.7; }
 
 input {
   color: white;
@@ -130,9 +124,9 @@ input {
   border: 0.5px solid #ccc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc;
-  -webkit-box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc;
-  box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc; }
+  -moz-box-shadow: inset 0 2px 2px -2px #edf1f2, inset 0 -2px 2px -2px #ccc;
+  -webkit-box-shadow: inset 0 2px 2px -2px #edf1f2, inset 0 -2px 2px -2px #ccc;
+  box-shadow: inset 0 2px 2px -2px #edf1f2, inset 0 -2px 2px -2px #ccc; }
 
 input:hover {
   background-color: #5BCFBD;
@@ -154,8 +148,7 @@ p.handle {
   color: #bbbec1;
   float: right;
   padding-top: 5px;
-  margin: 0;
-  transition: .5s all ease-in-out; }
+  margin: 0; }
 
 section.new-tweet {
   background-color: #eee;

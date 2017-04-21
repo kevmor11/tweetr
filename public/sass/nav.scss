@@ -1,4 +1,5 @@
 $navbar-color: #00a087;
+$navbar-height: 80px;
 
 body {
   margin: 0;
@@ -32,8 +33,8 @@ i.fa.fa-pencil-square-o {
 }
 
 img {
-  height: 80px;
-  width: 80px;
+  height: $navbar-height;
+  width: $navbar-height;
 }
 
 #nav-bar .logo .header {
@@ -50,7 +51,7 @@ img {
 #nav-bar {
   background-color: $navbar-color;
   color: white;
-  height: 80px;
+  height: $navbar-height;
   left: 0;
   padding: 0 2em;
   position: fixed;
@@ -62,7 +63,7 @@ img {
 
 #nav-bar .header {
   font-size: 200%;
-  line-height: 80px;
+  line-height: $navbar-height;
   padding-left: 10px;
   text-align: center;
   vertical-align: top;
