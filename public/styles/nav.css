@@ -19,6 +19,7 @@ button.compose-button {
 button:hover.compose-button {
   background-color: #F7F6F6;
   color: #017563;
+  cursor: pointer;
 }
 
 i.fa.fa-pencil-square-o {
@@ -66,5 +67,6 @@ img {
 }
 
 p.compose {
+  dispay: inline;
   margin-top: 12px;
 }

@@ -90,6 +90,7 @@ input {
 
 input:hover {
   background-color: #5BCFBD;
+  cursor: pointer;
 }
 
 .new-tweet .counter.over {

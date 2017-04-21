@@ -1,5 +1,9 @@
 $(function () {
 
+  function AJAXCall(url, method, data, dataType) {
+    return $.ajax({url, method, data, dataType});
+  }
+
   function createTweetHeader(tweet) {
     let $avatar = $("<img>", { src: tweet.user.avatars.regular }).addClass("avatar");
     let $username = $("<h2>", { text: tweet.user.name }).addClass("demo-header");
@@ -38,18 +42,28 @@ $(function () {
     })
   }
 
-  function loadTweets() {
-    $.ajax({
-      method: 'GET',
-      url: '/tweets',
-    }).then(function(tweets) {
-      let sort = tweets.sort(function(a, b) {
-        // console.log(a);
+  function sortTweets(tweets) {
+      return tweets.sort(function(a, b) {
         return b.created_at - a.created_at;
       })
-      renderTweets(sort);
-      $('.tweet-input').val('');
-    })
+  }
+
+  function emptyMyBox() {
+    $('.tweet-input').val('');
+  }
+
+  function loadTweets() {
+    AJAXCall("/tweets","GET")
+      .then(sortTweets)
+      .then(renderTweets)
+
+    // $.ajax({
+    //   method: 'GET',
+    //   url: '/tweets',
+    // }).then(function(tweets) {
+    //   renderTweets(sortTweets(tweets));
+    //   $('.tweet-input').val('');
+    // })
   }
 
   loadTweets();
@@ -60,29 +74,45 @@ $(function () {
     let tweettext = $this.find('[name=text]').val();
 
     if (tweettext === '') {
-      $this.find('.too-short').slideDown(function() {
+      let shortMessage = $this.find('.too-short');
+      shortMessage.slideDown(function() {
         setTimeout(function() {
-          $this.find('.too-short').slideUp();
+          shortMessage.slideUp();
         }, 5000);
       });
       return;
     }
     if (tweettext.length > 140) {
-      $this.find('.too-long').slideDown(function() {
+      let longMessage = $this.find('.too-long');
+      longMessage.slideDown(function() {
         setTimeout(function() {
-          $this.find('.too-long').slideUp();
+          longMessage.slideUp();
         }, 5000);
       });
       return;
     }
 
-    $.ajax({
-      method: "POST",
-      url: '/tweets',
-      data: $this.serialize()
-    }).then(function(tweets){
-      window.location.reload(true);
-    });
-  })
+    let tweetData = $this.serialize()
 
+    function emptyContainer(sortedTweets) {
+      $('#tweets-container').empty();
+      return sortedTweets;
+    }
+
+    AJAXCall("/tweets","POST",tweetData)
+      .then(sortTweets)
+      .then(emptyContainer)
+      .then(renderTweets)
+      .then(emptyMyBox)
+
+    // $.ajax({
+    //   method: "POST",
+    //   url: '/tweets',
+    //   data: $this.serialize()
+    // }).then(function(tweets){
+    //   $('#tweets-container').empty();
+    //   renderTweets(sortTweets(tweets));
+    // });
+  // })
+  })
 })
