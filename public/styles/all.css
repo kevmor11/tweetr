@@ -1,3 +1,218 @@
+body {
+  margin: 0; }
 
+button.compose-button {
+  background-color: white;
+  border: 1.5px solid #018e79;
+  border-radius: 8px;
+  color: #00a087;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-right: -15px;
+  margin-top: 14.5px;
+  vertical-align: center;
+  width: 100px; }
+
+button:hover.compose-button {
+  background-color: #F7F6F6;
+  color: #017563;
+  cursor: pointer; }
+
+i.fa.fa-pencil-square-o {
+  display: block;
+  float: left;
+  margin-left: 2px;
+  margin-top: 14.5px; }
+
+img {
+  height: 80px;
+  width: 80px; }
+
+#nav-bar .logo .header {
+  float: left;
+  padding: 10px;
+  position: relative; }
+
+#nav-bar .header {
+  margin-left: 536px;
+  padding: 10px; }
+
+#nav-bar {
+  background-color: #00a087;
+  color: white;
+  height: 80px;
+  left: 0;
+  padding: 0 2em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: auto;
+  z-index: 1; }
+
+#nav-bar .header {
+  font-size: 200%;
+  line-height: 80px;
+  padding-left: 10px;
+  text-align: center;
+  vertical-align: top; }
+
+p.compose {
+  dispay: inline;
+  margin-top: 12px; }
+
+article {
+  transition: .5s all ease-in-out; }
+
+article.demo-tweet {
+  border: 1.5px solid #d3d3d3;
+  border-radius: 7px;
+  margin-bottom: 30px; }
+
+article:hover {
+  border: 1.5px solid #6a94a0;
+  color: #244751;
+  transition: .5s all ease-in-out; }
+
+article:hover i.icon {
+  opacity: 1;
+  transition: .5s all ease-in-out; }
+
+article:hover img.avatar {
+  opacity: 1;
+  transition: .5s all ease-in-out; }
+
+article:hover p.handle {
+  color: #84898e;
+  transition: .5s all ease-in-out; }
+
+footer.footer {
+  border-top: 1px solid #eee;
+  color: #244751;
+  float: bottom;
+  margin-bottom: 0;
+  padding: 5px 10px; }
+
+header.tweet-header {
+  background-color: #eee;
+  border-radius: 5px 5px 0 0;
+  padding: 10px; }
+
+h2.compose-header {
+  margin-top: 0;
+  border-bottom: 1px solid #7b9faa; }
+
+h2.demo-header {
+  display: inline;
+  padding: 10px;
+  vertical-align: top; }
+
+i.icon {
+  color: #4fbcab;
+  display: inline;
+  float: right;
+  line-height: 10px;
+  opacity: 0;
+  padding: 5px;
+  transition: .5s all ease-in-out; }
+
+img.avatar {
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: .5s all ease-in-out; }
+
+input {
+  color: white;
+  margin-top: 4px;
+  outline: none;
+  padding: 5px 15px;
+  background: #83D4C8;
+  border: 0.5px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc;
+  -webkit-box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc;
+  box-shadow: inset  0  2px 2px -2px #edf1f2, inset  0 -2px 2px -2px #ccc; }
+
+input:hover {
+  background-color: #5BCFBD;
+  cursor: pointer; }
+
+.new-tweet .counter.over {
+  color: red; }
+
+p.tweet-text {
+  color: #244751;
+  padding: 15px; }
+
+p.footer {
+  display: inline;
+  font-size: 13px; }
+
+p.handle {
+  display: inline;
+  color: #bbbec1;
+  float: right;
+  padding-top: 5px;
+  margin: 0;
+  transition: .5s all ease-in-out; }
+
+section.new-tweet {
+  background-color: #eee;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 7px;
+  display: none;
+  margin-bottom: 30px;
+  padding: 10px; }
+
+span.counter {
+  float: right;
+  padding: 10px; }
+
+textarea.tweet-input {
+  border: 1.5px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 4px;
+  padding-bottom: 5px;
+  resize: none;
+  width: 100%; }
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+.error-message {
+  display: none; }
+
+h2.compose-header {
+  color: #244751; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+main.container {
+  background-color: white;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 60px;
+  width: 600px; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  margin: 0;
+  color: #698e99;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
 
 /*# sourceMappingURL=all.css.map */

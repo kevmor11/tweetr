@@ -1,3 +1,5 @@
+$text-color-dark: #244751;
+
 article {
   transition: .5s all ease-in-out;
 }
@@ -10,7 +12,7 @@ article.demo-tweet {
 
 article:hover {
   border: 1.5px solid #6a94a0;
-  color: #244751;
+  color: $text-color-dark;
   transition: .5s all ease-in-out;
 }
 
@@ -31,7 +33,7 @@ article:hover p.handle {
 
 footer.footer {
   border-top: 1px solid #eee;
-  color: #244751;
+  color: $text-color-dark;
   float: bottom;
   margin-bottom: 0;
   padding: 5px 10px;
@@ -98,7 +100,7 @@ input:hover {
 }
 
 p.tweet-text {
-  color: #244751;
+  color: $text-color-dark;
   padding: 15px;
 }
 

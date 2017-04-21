@@ -1,3 +1,5 @@
+$navbar-color: #00a087;
+
 body {
   margin: 0;
 }
@@ -6,7 +8,7 @@ button.compose-button {
   background-color: white;
   border: 1.5px solid #018e79;
   border-radius: 8px;
-  color: #00a087;
+  color: $navbar-color;
   display: block;
   float: right;
   height: 50px;
@@ -46,7 +48,7 @@ img {
 }
 
 #nav-bar {
-  background-color: #00a087;
+  background-color: $navbar-color;
   color: white;
   height: 80px;
   left: 0;
@@ -63,7 +65,7 @@ img {
   line-height: 80px;
   padding-left: 10px;
   text-align: center;
-  vertical-align: top;.fa-pencil-square-o
+  vertical-align: top;
 }
 
 p.compose {
