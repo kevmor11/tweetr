@@ -35,6 +35,11 @@ article:hover p.handle {
   color: #84898e;
 }
 
+article:hover p#counter.likes.counter {
+  @extend article;
+  opacity: 1;
+}
+
 footer.footer {
   border-top: 1px solid $background-grey;
   color: $text-color-dark;
@@ -122,11 +127,15 @@ p.handle {
   margin: 0;
 }
 
-p.likes {
-  display: inline;
+p#counter.likes.counter {
+  color: #bbbec1;
+  display: inline-block;
   float: right;
-  margin-bottom: 100px;
-}
+  margin: 0;
+  opacity: 0;
+  @extend article;
+  vertical-align: middle;
+  }
 
 section.new-tweet {
   background-color: $background-grey;

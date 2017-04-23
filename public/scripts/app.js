@@ -19,7 +19,7 @@ $(function () {
     let $footer = $(`
       <footer class="footer">
       <p class="footer">${formattedTime}</p>
-      <p class="likes">${tweet.likes}</p>
+      <p class="likes counter" id="counter">${tweet.likes}</p>
       <i class="fa fa-heart icon" data-id="${tweet._id}" aria-hidden="true"></i>
       <i class="fa fa-retweet icon" aria-hidden="true"></i>
       <i class="fa fa-flag icon" aria-hidden="true"></i>
