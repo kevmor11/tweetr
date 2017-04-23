@@ -19,7 +19,8 @@ $(function () {
     let $footer = $(`
       <footer class="footer">
       <p class="footer">${formattedTime}</p>
-      <i class="fa fa-heart icon" aria-hidden="true"></i>
+      <p class="likes">${tweet.likes}</p>
+      <i class="fa fa-heart icon" data-id="${tweet._id}" aria-hidden="true"></i>
       <i class="fa fa-retweet icon" aria-hidden="true"></i>
       <i class="fa fa-flag icon" aria-hidden="true"></i>
       </footer>
@@ -38,6 +39,23 @@ $(function () {
   function renderTweets(tweets) {
     tweets.forEach( function(tweet) {
       $('#tweets-container').append(createTweetElement(tweet));
+    })
+
+    $('.fa-heart').on('click', function(){
+      // console.log($(this).data('id'));
+      const postID = $(this).data('id');
+      // let counterValue = $(this).prev('.likes').text();
+      // console.log(counterValue);
+      $.ajax({
+        method: "PUT",
+        // data: counterValue,
+        url: "/tweets/like/" + postID,
+        success: () => {
+          window.location.reload();
+        }
+        })
+      // .then(loadTweets)
+        // .then(renderTweets)
     })
   }
 
@@ -136,4 +154,5 @@ $(function () {
     // });
   // })
   })
+
 })

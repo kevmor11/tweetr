@@ -147,6 +147,11 @@ p.handle {
   padding-top: 5px;
   margin: 0; }
 
+p.likes {
+  display: inline;
+  float: right;
+  margin-bottom: 1px; }
+
 section.new-tweet {
   background-color: #eee;
   border: 1.5px solid #d3d3d3;

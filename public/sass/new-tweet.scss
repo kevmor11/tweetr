@@ -122,6 +122,12 @@ p.handle {
   margin: 0;
 }
 
+p.likes {
+  display: inline;
+  float: right;
+  margin-bottom: 100px;
+}
+
 section.new-tweet {
   background-color: $background-grey;
   border: $border-settings;
