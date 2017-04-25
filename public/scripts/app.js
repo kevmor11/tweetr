@@ -44,13 +44,12 @@ $(function () {
     $('.fa-heart').on('click', function(){
       // console.log($(this).data('id'));
       const postID = $(this).data('id');
-      const $likesLabel = $(this).prev('.likes');
+      const $likesCounter = $(this).prev('.likes');
       $.ajax({
         method: "PUT",
-        // data: counterValue,
         url: "/tweets/like/" + postID,
         success: () => {
-          $likesLabel.text(parseInt($likesLabel.text()) + 1);
+          $likesCounter.text(parseInt($likesCounter.text()) + 1);
         }
       })
     })
