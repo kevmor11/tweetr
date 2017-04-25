@@ -50,7 +50,7 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.put("/like/:id", function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     DataHelpers.likeTweets(req.params.id, (err, tweet) => {
       if (err) {
         res.status(500).json({ error: err.message });

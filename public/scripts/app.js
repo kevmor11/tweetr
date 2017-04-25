@@ -44,18 +44,15 @@ $(function () {
     $('.fa-heart').on('click', function(){
       // console.log($(this).data('id'));
       const postID = $(this).data('id');
-      // let counterValue = $(this).prev('.likes').text();
-      // console.log(counterValue);
+      const $likesLabel = $(this).prev('.likes');
       $.ajax({
         method: "PUT",
         // data: counterValue,
         url: "/tweets/like/" + postID,
         success: () => {
-          window.location.reload();
+          $likesLabel.text(parseInt($likesLabel.text()) + 1);
         }
-        })
-      // .then(loadTweets)
-        // .then(renderTweets)
+      })
     })
   }
 
