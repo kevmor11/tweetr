@@ -1,28 +1,33 @@
-"use strict";
+'use strict';
+
 // This file is the server
 
 // Basic express and MongoDB setup:
 
 const PORT          = 8080;
-const express       = require("express");
-const bodyParser    = require("body-parser");
+const express       = require('express');
+const bodyParser    = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
+
 const app           = express();
-const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/test";
+const MONGODB_URI = 'mongodb://localhost:27017/test';
 
 // Use the body parser so our sever can translate request/response messages
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 // Link the Mongo database with the tweet rendering functions,
 // as well as the express server routes
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
-  const DataHelpers = require("./lib/data-helpers.js")(db);
-  const tweetsRoutes = require("./routes/tweets")(DataHelpers);
-  app.use("/tweets", tweetsRoutes);
+  if (err) {
+    console.log(err);
+  }
+  const DataHelpers = require('./lib/data-helpers.js')(db);
+  const tweetsRoutes = require('./routes/tweets')(DataHelpers);
+  app.use('/tweets', tweetsRoutes);
   app.listen(PORT, () => {
-    console.log("Example app listening on port " + PORT);
+    console.log('Example app listening on port ' + PORT);
   });
 });
 
@@ -37,4 +42,4 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
 
-// Mount the tweets routes at the "/tweets" path prefix:
+// Mount the tweets routes at the '/tweets' path prefix:

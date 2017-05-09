@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper    = require('../lib/util/user-helper')
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
@@ -8,7 +8,7 @@ const tweetsRoutes  = express.Router();
 // Defining the express routes as modular middleware
 module.exports = function(DataHelpers) {
 
-  tweetsRoutes.get("/", function(req, res) {
+  tweetsRoutes.get('/', function(req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -18,7 +18,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  tweetsRoutes.post("/", function(req, res) {
+  tweetsRoutes.post('/', function(req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
@@ -49,8 +49,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  tweetsRoutes.put("/like/:id", function(req, res) {
-    // console.log(req.params.id);
+  tweetsRoutes.put('/like/:id', function(req, res) {
     DataHelpers.likeTweets(req.params.id, (err, tweet) => {
       if (err) {
         res.status(500).json({ error: err.message });

@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/test";
+const MongoClient = require('mongodb').MongoClient;
+const MONGODB_URI = 'mongodb://localhost:27017/test';
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
@@ -9,15 +9,15 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     throw err;
   }
 
-  // ==> We have a connection to the "test-tweets" db,
+  // ==> We have a connection to the 'test-tweets' db,
   //     starting here.
   console.log(`Connected to mongodb: ${MONGODB_URI}`);
-  //this is an "entry point" for
+  //this is an 'entry point' for
   // a database-connected application!
 
   // Lets get all the tweets (find)
   function getTweets(callback) {
-    db.collection("tweets").find().toArray((err, tweets) => {
+    db.collection('tweets').find().toArray((err, tweets) => {
       if (err) {
         return callback(err);
       }
@@ -35,7 +35,5 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
     db.close();
   });
-
-
   // ==> At the end, we close the connection:
 });

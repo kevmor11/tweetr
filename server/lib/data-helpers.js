@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const { ObjectID } = require('mongodb');
 
@@ -6,14 +6,14 @@ const { ObjectID } = require('mongodb');
 module.exports = function makeDataHelpers(db) {
   return {
     // Saves a tweet to `db`
-    saveTweet: function(newTweet, callback) {
-      db.collection("tweets").insert(newTweet);
+    saveTweet: function (newTweet, callback) {
+      db.collection('tweets').insert(newTweet);
       callback(null, true);
     },
 
     // Get all tweets in `db`
     getTweets: function(callback) {
-      db.collection("tweets").find().toArray((err, tweets) => {
+      db.collection('tweets').find().toArray((err, tweets) => {
         if (err) {
           return callback(err);
         }
@@ -23,11 +23,11 @@ module.exports = function makeDataHelpers(db) {
 
     // Add a like to a tweet
     likeTweets: function(tweetID, callback) {
-      db.collection("tweets").update(
+      db.collection('tweets').update(
         { _id: ObjectID(tweetID) },
-        { $inc: { likes: 1 }
+        { $inc: { likes: 1 },
         });
       callback(null, true);
-    }
+    },
   };
-}
+};
